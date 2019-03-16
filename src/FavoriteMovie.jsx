@@ -1,15 +1,11 @@
 import React from 'react';
+import FilmDetails from './FilmDetails';
 
-export default function FavoriteMovie(props) {
+export default function FavoriteMovie({movies}) {
     return (
         <div className="FavoriteMovie">
-        <h2>This is my favorite movie</h2>
-        <img src="https://via.placeholderimage.com/150" alt="movie poster"/>
-        <ul>
-            <li>Movie title</li>
-            <li>Movie description</li>
-            <li>Movie date</li>
-        </ul>
+        <h2>My favorite movies!</h2>
+        {movies.map(movie => <FilmDetails key={movie.id} film={movie} /> )}
         </div>
     )
 }

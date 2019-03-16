@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as A } from 'react-router-dom';
 
 export default function MainBlog({posts}) {
     return (
@@ -9,7 +10,7 @@ export default function MainBlog({posts}) {
                     return (
                         <li key={post.id}>
                             <div className="post">
-                                <h4 className="postTitle">{post.title}</h4>
+                                <A className="postTitle" to={'/post/' + post.id } ><h4>{post.title}</h4></A>
                                 <p className="postBody">{post.body}</p>
                             </div>
                         </li>
